@@ -25,7 +25,7 @@ https://hub.docker.com/r/alpine/cfn-nag/tags/
 # Usage
 
     # mount local folders in container.
-    docker run -ti --rm -v $(pwd):/apps -w /apps alpine/cfn-nag --input-path .
+    docker run -ti --rm -v $(pwd):/apps -w /apps alpine/cfn-nag -i .
 
     # run container as command
     alias cfn_nag_scan="docker run -ti --rm -v $(pwd):/apps -w /apps alpine/cfn-nag"
