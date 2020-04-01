@@ -1,4 +1,4 @@
-# kubernetes cfn-nag
+# Linting tool for CloudFormation templates
 
 Auto-trigger docker build for [Linting tool for CloudFormation templates](https://github.com/stelligent/cfn_nag) when new release is announced
 
@@ -30,6 +30,30 @@ https://hub.docker.com/r/alpine/cfn-nag/tags/
     # run container as command
     alias cfn_nag_scan="docker run -ti --rm -v $(pwd):/apps -w /apps alpine/cfn-nag"
     cfn_nag_scan --help
+
+# sample output
+
+```
+--------
+| WARN W47
+|
+| Resources: ["SNSAllConfigurationTopic", "SNSNotification"]
+| Line Numbers: [45, 76]
+|
+| SNS Topic should specify KmsMasterKeyId property
+------------------------------------------------------------
+| FAIL F5
+|
+| Resources: ["AdditionalManagedIAMPolicy"]
+| Line Numbers: [42]
+|
+| IAM managed policy should not allow * action
+------------------------------------------------------------
+```
+
+# reference
+
+https://stelligent.com/2018/03/23/validating-aws-cloudformation-templates-with-cfn_nag-and-mu/
 
 # Why we need it
 
