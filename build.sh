@@ -19,7 +19,10 @@ build() {
     echo "matched"
   else
     echo "unmatched"
-    exit
+    
+    if [[ "$REBUILD" != "true" ]]; then
+      exit
+    fi
   fi
 
   if [[ "$TRAVIS_BRANCH" == "master" ]]; then
