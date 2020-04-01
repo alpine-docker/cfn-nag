@@ -19,10 +19,7 @@ build() {
     echo "matched"
   else
     echo "unmatched"
-    
-    if [[ "$REBUILD" != "true" ]]; then
-      exit
-    fi
+    exit
   fi
 
   if [[ "$TRAVIS_BRANCH" == "master" ]]; then
@@ -45,7 +42,7 @@ do
   echo $tag
   status=$(curl -sL https://hub.docker.com/v2/repositories/${image}/tags/${tag})
   echo $status
-  if [[ "${status}" =~ "not found" ]]; then
+  if [[ ( "${status}" =~ "not found" ) || ( "${REBUILD}" == "true" ) ]]; then
     build
   fi
 done
