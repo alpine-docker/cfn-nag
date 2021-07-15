@@ -1,3 +1,5 @@
+# After Travis CI adjusts their plan, we don't have enough free credit to run the build. So daily build has been adjusted to weekly. If you don't get latest version, please wait for one week.
+
 # Linting tool for CloudFormation templates
 
 Auto-trigger docker build for [Linting tool for CloudFormation templates](https://github.com/stelligent/cfn_nag) when new release is announced
@@ -16,7 +18,7 @@ https://github.com/alpine-docker/cfn-nag
 
 ### Daily Travis CI build logs
 
-https://travis-ci.org/alpine-docker/cfn-nag
+https://travis-ci.com/alpine-docker/cfn-nag
 
 ### Docker image tags
 
